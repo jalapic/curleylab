@@ -1,0 +1,24 @@
+Package: curleylab
+Title: Tools for the Curley Lab
+Version: 0.0.0.9000
+Date: 2015-03-06
+Author: James P. Curley <jc3181@columbia.edu>
+Maintainer: James P. Curley <jc3181@columbia.edu>
+Description: Tools for the Curley Lab
+License: >GPL-3
+Depends:
+    R (>= 3.1.0)
+LazyData: true
+Imports:
+    data.table,
+    dplyr,
+    ggplot2,
+    reshape2,
+    splitstackshape,
+    tidyr
+Suggests:
+    knitr,
+    testthat
+URL: https://github.com/jalapic/curleylab
+BugReports: https://github.com/jalapic/curleylab
+VignetteBuilder: knitr
