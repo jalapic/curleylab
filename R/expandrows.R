@@ -16,9 +16,7 @@
   
 expandrows <- function(df){
     
-    library(splitstackshape)  
-    library(data.table)  
-    
+    toDrop <- Actor <- Recipient <- id <- score <- NULL  ## not sure why this is needed
     
     temp <- cSplit(cSplit(cbind(id = 1:nrow(df), df),
                           "Actor", ",", "long"), 
