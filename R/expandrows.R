@@ -1,14 +1,15 @@
 #' Expand rows of google forms
 #'
-#' @param df A dataframe with two rows "Actor" "Recipient" - have to be only two
-#' @return The dataframe with expanded rows, as well as a score variable.
+#' @param df A dataframe with three columns "Actor" "Recipient"
+#' @return The dataframe with expanded rows, as well as a row-identifier
+#'  and score variable.
 #' @examples
 #' expandrows(df)
 #' @section Further details:
 #' Expand rows that have a variable where 2 or more factors 
 #' are split by commas into separate rows with
 #' all other variables duplicated.
-#' Make sure columns/variables are named "Actor" and "Recipient".
+#' Make sure columns/variables are named "Actor", "Recipient"
 #' The score variable will be '1' for Actors that are clear winners
 #' and a '0.5' for ties between Actors and Recipients.
 #' @export
@@ -39,7 +40,8 @@ expandrows <- function(df){
   temp[, score := ifelse(any(toDrop), 0.5, 1), by = id]
   
   ## Subset and drop the irrelevant columns
-  temp <-  temp[temp$toDrop!=T,]
-  out <- temp[, c(2:3,5), with = FALSE]
+  
+  out <-  temp[temp$toDrop!=T,]
+  #out <- temp[, c(2:3,5), with = FALSE]
   return(out)
 }
