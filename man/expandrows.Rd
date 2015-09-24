@@ -7,10 +7,11 @@
 expandrows(df)
 }
 \arguments{
-\item{df}{A dataframe with two rows "Actor" "Recipient" - have to be only two}
+\item{df}{A dataframe with three columns "Actor" "Recipient"}
 }
 \value{
-The dataframe with expanded rows, as well as a score variable.
+The dataframe with expanded rows, as well as a row-identifier
+ and score variable.
 }
 \description{
 Expand rows of google forms
@@ -20,7 +21,7 @@ Expand rows of google forms
 Expand rows that have a variable where 2 or more factors
 are split by commas into separate rows with
 all other variables duplicated.
-Make sure columns/variables are named "Actor" and "Recipient".
+Make sure columns/variables are named "Actor", "Recipient"
 The score variable will be '1' for Actors that are clear winners
 and a '0.5' for ties between Actors and Recipients.
 }
